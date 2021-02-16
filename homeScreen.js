@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { render } from 'react-dom';
-import { StyleSheet, Text, View, Image, TouchableOpacity, button } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, button, Screen } from 'react-native';
 
-export default class App extends React.Component{
+export default class homeScreen extends React.Component{
   render(){
     return(
       

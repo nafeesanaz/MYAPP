@@ -2,16 +2,17 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
+import homeScreen from './homeScreen';
 
-const stack = createStackNavigator();
+const Stack = createStackNavigator();
 
 export default class App extends React.Component {
   render() {
   return (
-    <View> 
+    <View style = {styles.container}> 
       <NavigationContainer>
         <Stack.Navigator>
-          <stack.screen name="Home" component = {HomeScreen} />
+          <Stack.Screen name="Home" component = {homeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
   
