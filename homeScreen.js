@@ -18,6 +18,11 @@ export default class homeScreen extends React.Component{
    
           })
   
+          this.props.navigation.setOptions({
+            headerBackTitle:'',
+            headerShown: false,
+   
+          })
 
     return(
       
@@ -46,7 +51,7 @@ export default class homeScreen extends React.Component{
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => alert('Hello world!')}
+        onPress={ () => this.props.navigation.navigate('Signup')}
         style={{ backgroundColor: '#607D8B',padding: 10, width: 100, borderRadius: 30, marginHorizontal: 2}}>
         <Text style={{ textAlign: 'center', fontSize: 20, color: '#fff' }}>SHOP</Text>
       </TouchableOpacity>
