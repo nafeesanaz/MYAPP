@@ -1,10 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-dom';
 import { StyleSheet, Text, View, Image, TouchableOpacity, button, Screen } from 'react-native';
 
 export default class homeScreen extends React.Component{
   render(){
+    
+        this.props.navigation.setOptions({
+          headerBackTitle:'',
+          headerShown: false,
+ 
+        })
+
+        this.props.navigation.setOptions({
+            headerBackTitle:'',
+            headerShown: false,
+   
+          })
+  
+
     return(
       
     <View style={styles.container}>
@@ -20,14 +34,13 @@ export default class homeScreen extends React.Component{
 
       <View style = {{  flexDirection: 'row', margin: 5, paddingVertical: 10 }}> 
       <TouchableOpacity
-        onPress={ () => this.props.navigation.navigate('login')}
-        onPress={() => alert('Hello world!')}
+        onPress={ () => this.props.navigation.navigate('Login')}
         style={{ backgroundColor: '#607D8B',padding: 10, width: 100, borderRadius: 30, marginHorizontal: 2}}>
         <Text style={{ textAlign: 'center', fontSize: 20, color: '#fff' }}>LOGIN</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => alert('Hello world!')}
+        onPress={ () => this.props.navigation.navigate('Signup')}
         style={{ backgroundColor: '#607D8B',padding: 10, width: 100, borderRadius: 30, marginHorizontal: 2}}>
         <Text style={{ textAlign: 'center', fontSize: 20, color: '#fff' }}>SIGN UP</Text>
       </TouchableOpacity>
