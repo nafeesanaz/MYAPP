@@ -3,33 +3,66 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native
 
 
 export default class LoginScreen extends React.Component{
+
+    state = {
+        username:"",
+        password:"",
+        errMsg: ""
+    }
+
+         onLogin = () => {
+         if (this.state.username == 'Bob' &&  this.state.password == '12345') 
+        {
+
+            this.props.navigation.navigate('Shop')
+        }
+        else {
+            this.setState({errMsg: 'Username or Password Incorrect'})
+        }
+    } 
+   
+
     render(){
+        
         return(
            <View style={styles.container}>
                <Text style={{ fontSize: 25,fontWeight:'bold', marginTop:20, color: '#607D8B' }}>Welcome Back!</Text>
                <Text style={{ fontsize: 16, fontWeight:'bold', color:'gray', marginTop: 20 }}>Sign in to continue</Text>
               
                <TextInput
-                    style= {{ marginTop:40, borderBottomColor:'#ddd', borderBottomWidth:1 , paddingBottom: 20}}
+                    style={{ marginTop: 40, borderBottomColor: '#ddd', borderBottomWidth: 1, paddingBottom: 20 }}
                     placeholder="Username"
-                
+                    onChangeText = {(text) => 
+                        {
+                            this.setState({errMsg: ''}),
+                            this.setState({ username: text })
+                        }
+                    }
                 />
 
                 <TextInput
-                    style= {{ marginTop:40, borderBottomColor:'#ddd', borderBottomWidth:1 , paddingBottom: 20}}
+                    style={{ marginTop: 40, borderBottomColor: '#ddd', borderBottomWidth: 1, paddingBottom: 20 }}
                     placeholder="Password"
-                
+                    secureTextEntry={true}
+                    onChangeText = {(text) => 
+                        {
+                            this.setState({errMsg: ''}),
+                            this.setState({ password: text })}
+                        }
+
                 />
+                
+                <Text style={{ color: '#ad5058', textAlign: 'center', marginTop: 30}}>{this.state.errMsg}</Text>
         
            <View style = {{ alignItems: 'center', justifyContent: 'center', marginTop: 40}}>
             
                 <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('Shop')}
                     style={{ width: 200, backgroundColor: '#607D8B', padding: 10, alignItems:'center', justifyContent:'center', borderRadius: 40, marginTop: 30}}
                 >
-                
-                <Text style = {{ textalign: 'center', color: '#fff', fontsize: 16}}>Login Now!</Text>
+            
+                <Text style = {{ textalign: 'center', color: '#fff', fontsize: 16}}>Login Now</Text>
                 </TouchableOpacity>
-
                 <Text style = {{ marginTop: 10}}> Forgot Password?</Text>
                 </View>
     
