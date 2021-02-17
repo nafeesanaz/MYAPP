@@ -50,7 +50,7 @@ export default class homeScreen extends React.Component{
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={ () => this.props.navigation.navigate('Signup')}
+        onPress={ () => this.props.navigation.navigate('Shop')}
         style={{ backgroundColor: '#607D8B',padding: 10, width: 100, borderRadius: 30, marginHorizontal: 2}}>
         <Text style={{ textAlign: 'center', fontSize: 20, color: '#fff' }}>SHOP</Text>
       </TouchableOpacity>

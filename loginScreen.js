@@ -4,14 +4,15 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native
 
 export default class LoginScreen extends React.Component{
 
-    state = {
-        username:"",
-        password:"",
-        errMsg: ""
-    }
+    constructor(props){
+        super(props)
+        this.state = {Username: "David"}
+        this.state = {Password: "1234"}
+        
+    } 
 
          onLogin = () => {
-         if (this.state.username == 'Bob' &&  this.state.password == '12345') 
+         if (this.state.username == 'David' &&  this.state.password == '1234') 
         {
 
             this.props.navigation.navigate('Shop')
