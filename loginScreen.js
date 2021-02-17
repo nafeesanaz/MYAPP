@@ -1,22 +1,76 @@
 import * as React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
 
 export default class LoginScreen extends React.Component{
     render(){
         return(
-           <View>
-               <Text>login screen</Text>
-           </View> 
-        ) 
+           <View style={styles.container}>
+               <Text style={{ fontSize: 25,fontWeight:'bold', marginTop:20, color: '#607D8B' }}>Welcome Back!</Text>
+               <Text style={{ fontsize: 16, fontWeight:'bold', color:'gray', marginTop: 20 }}>Sign in to continue</Text>
+              
+               <TextInput
+                    style= {{ marginTop:40, borderBottomColor:'#ddd', borderBottomWidth:1 , paddingBottom: 20}}
+                    placeholder="Username"
+                
+                />
+
+                <TextInput
+                    style= {{ marginTop:40, borderBottomColor:'#ddd', borderBottomWidth:1 , paddingBottom: 20}}
+                    placeholder="Password"
+                
+                />
+        
+           <View style = {{ alignItems: 'center', justifyContent: 'center', marginTop: 40}}>
+            
+                <TouchableOpacity
+                    style={{ width: 200, backgroundColor: '#607D8B', padding: 10, alignItems:'center', justifyContent:'center', borderRadius: 40, marginTop: 30}}
+                >
+                
+                <Text style = {{ textalign: 'center', color: '#fff', fontsize: 16}}>Login Now!</Text>
+                </TouchableOpacity>
+
+                <Text style = {{ marginTop: 10}}> Forgot Password?</Text>
+                </View>
+    
+                <View style={{flexDirection:'row', marginTop: 30}}>
+                <View style={{height: 40, width: 40, borderRadius:40/2, backgroundColor:'#607D8B',marginHorizontal: 10, alignItems:'center', justifyContent:'center'}}>
+                <Text style= {{ fontSize: 25, fontWeight: 'bold', color:'#FFF'}}>f</Text>
+                </View>
+                
+                <View style={{ height:40, width: 40, borderRadius: 40/2, backgroundColor: '#ab6565', marginHorizontal: 10, alignItems:'center', justifyContent:'center'}}>
+                <Text style={{ fontSize:25, fontWeight: 'bold', color: '#FFF'}}>G</Text>
+                </View>
+
+                <View style={{ height: 40, width: 40, borderRadius:40/2, backgroundColor:'#5e274e', alignItems:'center', justifyContent:'center',marginHorizontal: 10}}>
+                <Text style ={{ fontSize:25, fontWeight: 'bold', color: '#FFF'}}>IG</Text>
+                </View>
+            </View>
+
+            <View style={{ flexDirection:'row', marginTop: 10 }}>
+                <Text style={{ color:'gray'}}>
+                    don't have an account?
+                </Text>
+                <Text style={{fontWeight:'bold', color:'#607D8B'}}>
+                    Sign Up
+                </Text>
+            </View>
+        </View>
+
+
+        
+    
+        )
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#d5e7e8',
+      padding: 20
       
     },
-  });
-  
+});
+
