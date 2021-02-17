@@ -6,6 +6,10 @@ import homeScreen from './homeScreen';
 import loginScreen from './loginScreen';
 import signupScreen from './signupScreen';
 import ShopScreen from './shopScreen';
+import clothes from './clothes';
+import electronics from './electronics';
+import furniture from './furniture';
+import jewellery from './jewellery';
 
 
 const Stack = createStackNavigator();
@@ -21,6 +25,10 @@ export default class App extends React.Component {
           <Stack.Screen name="Login" component = {loginScreen} />
           <Stack.Screen name="Signup" component = {signupScreen} />
           <Stack.Screen name="Shop" component = {ShopScreen} />
+          <Stack.Screen name="clothes" component = {clothes} />
+          <Stack.Screen name="electronics" component = {electronics} />
+          <Stack.Screen name="furniture" component = {furniture} />
+          <Stack.Screen name="jewellery" component = {jewellery} />
         </Stack.Navigator>
       </NavigationContainer>
       

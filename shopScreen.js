@@ -4,14 +4,13 @@ import { View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native'
 
 
+
 export default class shopScreen extends React.Component{
-    state = {
-        Location: "Location"
-    }
+    
 
     render(){
         return(
-        <ScrollView style ={{backgroundColor:"#FFF"}}>
+        <ScrollView style ={{backgroundColor:"#d5e7e8"}}>
             <View Style ={{ 
                 flexDirection:"row",
                 alignItems:"center",
@@ -19,8 +18,9 @@ export default class shopScreen extends React.Component{
                 marginHorizontal: 20
             }}>
             
+            
 
-            <View style = {{  flexDirection: 'row', margin: 5, paddingVertical: 10 }}> 
+            <View style = {{  flexDirection: 'row', margin: 5, paddingVertical: 30 }}> 
                 <TouchableOpacity
                     onPress={ () => this.props.navigation.navigate('clothes')}
                     style={{ backgroundColor: '#607D8B',padding: 10, width: 80, borderRadius: 30, marginHorizontal: 2}}>
@@ -28,19 +28,19 @@ export default class shopScreen extends React.Component{
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={ () => this.props.navigation.navigate('Signup')}
+                    onPress={ () => this.props.navigation.navigate('electronics')}
                     style={{ backgroundColor: '#607D8B',padding: 10, width: 100, borderRadius: 30, marginHorizontal: 2}}>
                     <Text style={{ textAlign: 'center', fontSize: 15, color: '#fff' }}>electronics</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={ () => this.props.navigation.navigate('Shop')}
+                    onPress={ () => this.props.navigation.navigate('furniture')}
                     style={{ backgroundColor: '#607D8B',padding: 10, width: 80, borderRadius: 30, marginHorizontal: 2}}>
                     <Text style={{ textAlign: 'center', fontSize: 15, color: '#fff' }}>furniture</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={ () => this.props.navigation.navigate('Shop')}
+                    onPress={ () => this.props.navigation.navigate('jewellery')}
                     style={{ backgroundColor: '#607D8B',padding: 10, width: 80, borderRadius: 30, marginHorizontal: 2}}>
                     <Text style={{ textAlign: 'center', fontSize: 15, color: '#fff' }}>jewellery</Text>
                 </TouchableOpacity>
@@ -89,9 +89,48 @@ export default class shopScreen extends React.Component{
                 />
                 
             </View>
-
+            <View style ={{flexDirection: 'row', margin: 2}}>   
+                  
+                <Image
+                style={{ width : "50%", height: 130, borderRadius: 40/2}} 
+                source = {require ('./assets/images/phone.png')}
+                resizeMode = "contain"
+                />
+          
+                <Image 
+                style={{ width : "50%", height: 130, borderRadius: 40/2}} 
+                source = {require ('./assets/images/spoon.png')}
+                resizeMode = "contain"
+                />
+                
             </View>
-
+            <View style ={{flexDirection: 'row', margin: 2}}>   
+                  
+                <Image
+                style={{ width : "50%", height: 130, borderRadius: 40/2}} 
+                source = {require ('./assets/images/ear.png')}
+                resizeMode = "contain"
+                />
+          
+                <Image 
+                style={{ width : "50%", height: 130, borderRadius: 40/2}} 
+                source = {require ('./assets/images/ring.png')}
+                resizeMode = "contain"
+                />
+                
+            </View>
+            <View style ={{flexDirection: 'row', margin: 1, alignItems:"center", justifyContent:'center'}}>   
+                  
+                  <Image
+                  style={{ width : "50%", height: 130, borderRadius: 40/2}} 
+                  source = {require ('./assets/images/icon1.png')}
+                  resizeMode = "contain"
+                  />
+            
+                  
+              </View>
+            </View>
+            
             
 
             
