@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView} from 'react-native';
 
 
 export default class LoginScreen extends React.Component{
@@ -26,6 +26,7 @@ export default class LoginScreen extends React.Component{
     render(){
         
         return(
+            <ScrollView>
            <View style={styles.container}>
                <Text style={{ fontSize: 25,fontWeight:'bold', marginTop:20, color: '#607D8B' }}>Welcome Back!</Text>
                <Text style={{ fontsize: 16, fontWeight:'bold', color:'gray', marginTop: 20 }}>Sign in to continue</Text>
@@ -91,7 +92,7 @@ export default class LoginScreen extends React.Component{
             </View>
         </View>
 
-
+        </ScrollView>                    
         
     
         )

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView} from 'react-native';
 
 
 export default class signupScreen extends React.Component{
@@ -34,6 +34,7 @@ export default class signupScreen extends React.Component{
 
     render(){
         return(
+            <ScrollView>
             <View style={styles.container}>
               <Text style = {{
                   fontSize: 24, 
@@ -96,7 +97,7 @@ export default class signupScreen extends React.Component{
             
 
             </View>
-          
+            </ScrollView>  
         ) 
     }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity, TouchableNativeFeedback} from 'react-native';
 //import{ Picker} from 'react-native-community/picker'
 import {ScrollView} from 'react-native'
 
@@ -25,7 +25,7 @@ export default class shopScreen extends React.Component{
                     style={{ backgroundColor: '#607D8B',padding: 20, width: 200, borderRadius: 20, marginHorizontal: 2}}>
                     <Text style={{ textAlign: 'center', fontSize: 15, color: '#fff' }}>Add New Item to Sell</Text>
                 </TouchableOpacity>
-
+                    
             </View>
             <View style = {{  flexDirection: 'row', margin: 2, paddingVertical: 30 }}> 
                 <TouchableOpacity
@@ -53,78 +53,93 @@ export default class shopScreen extends React.Component{
                 </TouchableOpacity>
             </View>
 
-            <View style ={{flexDirection: 'row', margin: 2}}>                
+            <View style ={{flexDirection: 'row', margin: 2}}>        
+           <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('jewellery')} >
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/bracelet.png')}
                 resizeMode = "contain"
                 />
+            </TouchableNativeFeedback>
+
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('clothes')} >
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/shirt.png')}
                 resizeMode = "contain"
                 />
-                
+            </TouchableNativeFeedback>        
             </View>
 
-            <View style ={{flexDirection: 'row', margin: 2}}>                
+            
+            <View style ={{flexDirection: 'row', margin: 2}}>  
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('electronics')} >   
+                     
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/pods.png')}
                 resizeMode = "contain"
                 />
+            </TouchableNativeFeedback>
+            
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('clothes')} >   
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/Jeans.png')}
                 resizeMode = "contain"
                 />
-                
+            </TouchableNativeFeedback>
             </View>
 
             <View style ={{flexDirection: 'row', margin: 2}}>   
-                  
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('furniture')} >        
                 <Image
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/Sofa.png')}
                 resizeMode = "contain"
                 />
-          
+            </TouchableNativeFeedback>
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('jewellery')} >   
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/ring.png')}
                 resizeMode = "contain"
                 />
-                
+            </TouchableNativeFeedback>   
             </View>
             <View style ={{flexDirection: 'row', margin: 2}}>   
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('electronics')} >   
                   
                 <Image
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/phone.png')}
                 resizeMode = "contain"
                 />
-          
+            </TouchableNativeFeedback>
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('furniture')} >   
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/spoon.png')}
                 resizeMode = "contain"
                 />
-                
+            </TouchableNativeFeedback>    
             </View>
             <View style ={{flexDirection: 'row', margin: 2}}>   
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('electronics')} >   
                   
                 <Image
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/ear.png')}
                 resizeMode = "contain"
                 />
-          
+            </TouchableNativeFeedback>
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('electronics')} >   
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/ring.png')}
                 resizeMode = "contain"
                 />
-                
+            </TouchableNativeFeedback>   
             </View>
             <View style ={{flexDirection: 'row', margin: 1, alignItems:"center", justifyContent:'center'}}>   
                   

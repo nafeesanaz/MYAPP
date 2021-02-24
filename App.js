@@ -10,6 +10,7 @@ import clothes from './clothes';
 import electronics from './electronics';
 import furniture from './furniture';
 import jewellery from './jewellery';
+import clothesinfo from './clothesinfo';
 
 
 const Stack = createStackNavigator();
@@ -29,6 +30,7 @@ export default class App extends React.Component {
           <Stack.Screen name="electronics" component = {electronics} />
           <Stack.Screen name="furniture" component = {furniture} />
           <Stack.Screen name="jewellery" component = {jewellery} />
+          <Stack.Screen name="clothesinfo" component = {clothesinfo}/>
         </Stack.Navigator>
       </NavigationContainer>
       
