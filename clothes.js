@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableNativeFeedback, Image} from 'react-native';
 
 export default class clothes extends React.Component {
   render() {
@@ -17,12 +17,14 @@ export default class clothes extends React.Component {
    
 
     
-     <View style ={{flexDirection: 'row', margin: 2}}>                
+     <View style ={{flexDirection: 'row', margin: 2}}>
+     <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('clothesinfo')} >                   
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/jjeans.png')}
                 resizeMode = "contain"
                 />
+      </TouchableNativeFeedback>
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/pants.png')}

@@ -17,27 +17,12 @@ export default class clothes extends React.Component {
      <View style ={{flexDirection: 'row', margin: 2}}>                
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/bracelet.png')}
+                source = {require ('./assets/images/f1.png')}
                 resizeMode = "contain"
                 />
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/shirt.png')}
-                resizeMode = "contain"
-                />
-    
-                
-    </View>
-
-    <View style ={{flexDirection: 'row', margin: 2}}>                
-                <Image 
-                style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/bracelet.png')}
-                resizeMode = "contain"
-                />
-                <Image 
-                style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/shirt.png')}
+                source = {require ('./assets/images/f2.png')}
                 resizeMode = "contain"
                 />
     
@@ -47,12 +32,12 @@ export default class clothes extends React.Component {
     <View style ={{flexDirection: 'row', margin: 2}}>                
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/bracelet.png')}
+                source = {require ('./assets/images/f3.png')}
                 resizeMode = "contain"
                 />
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/shirt.png')}
+                source = {require ('./assets/images/f5.png')}
                 resizeMode = "contain"
                 />
     
@@ -62,12 +47,27 @@ export default class clothes extends React.Component {
     <View style ={{flexDirection: 'row', margin: 2}}>                
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/bracelet.png')}
+                source = {require ('./assets/images/f6.png')}
                 resizeMode = "contain"
                 />
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/shirt.png')}
+                source = {require ('./assets/images/f8.png')}
+                resizeMode = "contain"
+                />
+    
+                
+    </View>
+
+    <View style ={{flexDirection: 'row', margin: 2}}>                
+                <Image 
+                style={{ width : "50%", height: 130, borderRadius: 40/2}} 
+                source = {require ('./assets/images/f7.png')}
+                resizeMode = "contain"
+                />
+                <Image 
+                style={{ width : "50%", height: 130, borderRadius: 40/2}} 
+                source = {require ('./assets/images/f4.png')}
                 resizeMode = "contain"
                 />
     
