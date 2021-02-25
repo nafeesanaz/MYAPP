@@ -17,10 +17,10 @@ export default class signupScreen extends React.Component{
 
     validate_field=()=>{
         const { NAME, PRICE} = this.state
-        if(username == ""){
+        if( NAME == ""){
             alert("Enter NAME")
             return false
-        } else if (password == ""){
+        } else if (PRICE == ""){
             alert("Enter NAME")
             return false
         }

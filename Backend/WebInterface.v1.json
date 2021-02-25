@@ -1,0 +1,635 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "WebInterface",
+    "version": "1.0",
+    "description": "buy and sell application API"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/users/{userId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "integer"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true,
+          "description": "Id of an existing user."
+        }
+      ],
+      "get": {
+        "summary": "Get User Info by User ID",
+        "tags": [],
+        "responses": {
+          "201": {
+            "description": "logged in",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "Get User Alice Smith": {
+                    "value": {
+                      "id": 142,
+                      "firstName": "Alice",
+                      "lastName": "Smith",
+                      "email": "alice.smith@gmail.com",
+                      "dateOfBirth": "1997-10-31",
+                      "emailVerified": true,
+                      "signUpDate": "2019-08-24"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "username or password incorrect"
+          },
+          "418": {
+            "description": "missing or incorrect data type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "description": "enter username"
+                    },
+                    "password": {
+                      "type": "string",
+                      "description": "enter password"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "username": "string",
+                      "password": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-users-userId",
+        "description": "Retrieve the information of the user with the matching user ID.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "example-1": {
+                  "value": {}
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      },
+      "patch": {
+        "summary": "Update User Information",
+        "operationId": "patch-users-userId",
+        "responses": {
+          "200": {
+            "description": "User Updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "Updated User Rebecca Baker": {
+                    "value": {
+                      "id": 13,
+                      "firstName": "Rebecca",
+                      "lastName": "Baker",
+                      "email": "rebecca@gmail.com",
+                      "dateOfBirth": "1985-10-02",
+                      "emailVerified": false,
+                      "createDate": "2019-08-24"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found"
+          },
+          "409": {
+            "description": "Email Already Taken"
+          }
+        },
+        "description": "Update the infromation of an existing user.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "If a new email is given, the user's email verified property will be set to false."
+                  },
+                  "dateOfBirth": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "Update First Name": {
+                  "value": {
+                    "firstName": "Rebecca"
+                  }
+                },
+                "Update Email": {
+                  "value": {
+                    "email": "rebecca@gmail.com"
+                  }
+                },
+                "Update Last Name & Date of Birth": {
+                  "value": {
+                    "lastName": "Baker",
+                    "dateOfBirth": "1985-10-02"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Patch user properties to update."
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "summary": "Create New User",
+        "operationId": "post-user",
+        "responses": {
+          "200": {
+            "description": "User Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "New User Bob Fellow": {
+                    "value": {
+                      "id": 12,
+                      "firstName": "Bob",
+                      "lastName": "Fellow",
+                      "email": "bob.fellow@gmail.com",
+                      "dateOfBirth": "1996-08-24",
+                      "emailVerified": false,
+                      "createDate": "2020-11-18"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Required Information"
+          },
+          "409": {
+            "description": "Email Already Taken",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "dateOfBirth": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              },
+              "examples": {
+                "Create User Bob Fellow": {
+                  "value": {
+                    "firstName": "Bob",
+                    "lastName": "Fellow",
+                    "email": "bob.fellow@gmail.com",
+                    "dateOfBirth": "1996-08-24"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Post the necessary fields for the API to create a new user."
+        },
+        "description": "Create a new user."
+      }
+    },
+    "/users/{products}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "products",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "201": {
+            "description": "User products shown",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "reload",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "id": "102",
+                      "title": "t-shirt",
+                      "description": "cotton",
+                      "category": "clothes",
+                      "location": "oulu",
+                      "images": "string",
+                      "price": "10 euro",
+                      "date of posting": "10/02/21",
+                      "delivery type": "pickup",
+                      "sellers name ": "bryan",
+                      "sellers contact": "bryan@gmail.com"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-users-products",
+        "description": "show products to buy"
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-users-products",
+        "responses": {
+          "201": {
+            "description": "Product added",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products"
+                }
+              }
+            }
+          },
+          "418": {
+            "description": "missing information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products"
+                }
+              }
+            }
+          }
+        },
+        "description": "add products to sell"
+      },
+      "patch": {
+        "summary": "",
+        "operationId": "patch-users-products",
+        "responses": {
+          "201": {
+            "description": "Item has been modified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "reload and try again"
+          },
+          "401": {
+            "description": "empty field"
+          }
+        },
+        "description": "modify items"
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-users-products",
+        "responses": {
+          "201": {
+            "description": "Item has been deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "user not logged in",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products"
+                }
+              }
+            }
+          }
+        },
+        "description": "Delete product"
+      },
+      "trace": {
+        "summary": "",
+        "operationId": "trace-users-products",
+        "responses": {
+          "201": {
+            "description": "Item shown"
+          },
+          "400": {
+            "description": "item not found"
+          },
+          "401": {
+            "description": "empty field",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products"
+                }
+              }
+            }
+          }
+        },
+        "description": "find products in different categories"
+      }
+    },
+    "/users/{payments}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "payments",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "201": {
+            "description": "payment successful"
+          },
+          "400": {
+            "description": "empty field",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/payments"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "operationId": "get-users-payments",
+        "description": "Payment for product"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "title": "User",
+        "type": "object",
+        "description": "user login",
+        "x-examples": {
+          "Alice Smith": {
+            "id": 142,
+            "firstName": "Alice",
+            "lastName": "Smith",
+            "email": "alice.smith@gmail.com",
+            "dateOfBirth": "1997-10-31",
+            "emailVerified": true,
+            "signUpDate": "2019-08-24"
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the given user."
+          },
+          "firstName": {
+            "type": "string",
+            "description": "first name\n"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "surname\n"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "email adress\n"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "example": "1997-10-31",
+            "description": "date of birth\n"
+          },
+          "emailVerified": {
+            "type": "boolean",
+            "description": "Set to true if the user's email has been verified."
+          },
+          "createDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date that the user was created."
+          }
+        }
+      },
+      "products": {
+        "title": "products",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "product code\n",
+            "example": "102"
+          },
+          "title": {
+            "type": "string",
+            "description": "name of product",
+            "example": "t-shirt"
+          },
+          "description": {
+            "type": "string",
+            "description": "description of item",
+            "example": "cotton"
+          },
+          "category": {
+            "type": "string",
+            "description": "category it belongs to",
+            "example": "clothes"
+          },
+          "location": {
+            "type": "string",
+            "description": "location of item",
+            "example": "oulu"
+          },
+          "images": {
+            "type": "string",
+            "description": "picture of item",
+            "format": "uri-reference"
+          },
+          "price": {
+            "type": "string",
+            "description": "price of item",
+            "example": "10 euro"
+          },
+          "date of posting": {
+            "type": "string",
+            "description": "date it was posted",
+            "format": "date",
+            "example": "10/02/21"
+          },
+          "delivery type": {
+            "type": "string",
+            "description": "pickup or delivery",
+            "example": "pickup"
+          },
+          "sellers name ": {
+            "type": "string",
+            "description": "sellers name",
+            "example": "bryan"
+          },
+          "sellers contact": {
+            "type": "string",
+            "description": "sellers contact",
+            "format": "email",
+            "example": "bryan@gmail.com"
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "id": "102",
+            "title": "t-shirt",
+            "description": "cotton",
+            "category": "clothes",
+            "location": "oulu",
+            "images": "string",
+            "price": "10 euro",
+            "date of posting": "10/02/21",
+            "delivery type": "pickup",
+            "sellers name ": "bryan",
+            "sellers contact": "bryan@gmail.com"
+          }
+        },
+        "description": "posting information"
+      },
+      "payments": {
+        "title": "payments",
+        "type": "object",
+        "x-examples": {
+          "example-2": {
+            "id": "1234",
+            "paymentType": "credit card",
+            "CardNumber": 12345678910,
+            "Name": "bryan bo",
+            "CVV": 441
+          }
+        },
+        "description": "Paying for product",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": "1234"
+          },
+          "paymentType": {
+            "type": "string",
+            "description": "Method of payment\n",
+            "example": "credit card"
+          },
+          "CardNumber": {
+            "type": "number",
+            "description": "Number on card",
+            "example": 12345678910
+          },
+          "Name": {
+            "type": "string",
+            "description": "full name on card",
+            "example": "bryan bo"
+          },
+          "CVV": {
+            "type": "number",
+            "description": "3 digit cvv no. on the back of card",
+            "example": 441
+          }
+        },
+        "required": [
+          "paymentType",
+          "CardNumber",
+          "Name",
+          "CVV"
+        ]
+      }
+    }
+  }
+}

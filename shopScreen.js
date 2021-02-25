@@ -108,7 +108,7 @@ export default class shopScreen extends React.Component{
             <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('jewellery')} >   
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/ring.png')}
+                source = {require ('./assets/images/gray.png')}
                 resizeMode = "contain"
                 />
             </TouchableNativeFeedback>   
@@ -125,7 +125,7 @@ export default class shopScreen extends React.Component{
             <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('furniture')} >   
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
-                source = {require ('./assets/images/spoon.png')}
+                source = {require ('./assets/images/f8.png')}
                 resizeMode = "contain"
                 />
             </TouchableNativeFeedback>    
@@ -139,7 +139,7 @@ export default class shopScreen extends React.Component{
                 resizeMode = "contain"
                 />
             </TouchableNativeFeedback>
-            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('electronics')} >   
+            <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('jewellery')} >   
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/ring.png')}
