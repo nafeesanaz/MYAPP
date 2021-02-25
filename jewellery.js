@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableNativeFeedback, Image} from 'react-native';
 
 export default class clothes extends React.Component {
 
@@ -20,11 +20,13 @@ export default class clothes extends React.Component {
                 source = {require ('./assets/images/j1.png')}
                 resizeMode = "contain"
                 />
+                <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('bracelet')} >
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/j2.png')}
                 resizeMode = "contain"
                 />
+                </TouchableNativeFeedback>
     
                 
     </View>
