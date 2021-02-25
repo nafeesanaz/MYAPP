@@ -25,27 +25,31 @@ export default class clothes extends React.Component {
                 resizeMode = "contain"
                 />
       </TouchableNativeFeedback>
+      <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('clothestwo')} >    
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/pants.png')}
                 resizeMode = "contain"
                 />
-    
+      </TouchableNativeFeedback>
                 
     </View>
 
-    <View style ={{flexDirection: 'row', margin: 2}}>                
+    <View style ={{flexDirection: 'row', margin: 2}}>  
+    <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('clothes3')} >               
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/sweater.png')}
                 resizeMode = "contain"
                 />
+    </TouchableNativeFeedback>
+    <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('sweater')} >  
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/blue.png')}
                 resizeMode = "contain"
                 />
-    
+    </TouchableNativeFeedback>
                 
     </View>
 
@@ -55,12 +59,13 @@ export default class clothes extends React.Component {
                 source = {require ('./assets/images/gray.png')}
                 resizeMode = "contain"
                 />
+    <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('collarT')} >              
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/check.png')}
                 resizeMode = "contain"
                 />
-    
+    </TouchableNativeFeedback>
                 
     </View>
 

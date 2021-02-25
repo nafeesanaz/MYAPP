@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableNativeFeedback, Image} from 'react-native';
 
 export default class clothes extends React.Component {
 
@@ -14,12 +14,14 @@ export default class clothes extends React.Component {
         marginHorizontal: 20
     }}>
      
-     <View style ={{flexDirection: 'row', margin: 2}}>                
+     <View style ={{flexDirection: 'row', margin: 2}}> 
+     <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('controller')} >               
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/e1.png')}
                 resizeMode = "contain"
                 />
+     </TouchableNativeFeedback>
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/e2.png')}
@@ -29,12 +31,14 @@ export default class clothes extends React.Component {
                 
     </View>
 
-    <View style ={{flexDirection: 'row', margin: 2}}>                
+    <View style ={{flexDirection: 'row', margin: 2}}>        
+    <TouchableNativeFeedback onPress={ () => this.props.navigation.navigate('headphones')} >             
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/e3.png')}
                 resizeMode = "contain"
                 />
+    </TouchableNativeFeedback>            
                 <Image 
                 style={{ width : "50%", height: 130, borderRadius: 40/2}} 
                 source = {require ('./assets/images/e4.png')}

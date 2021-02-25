@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image} from 'react-native';
     
-    export default class clothesinfo extends React.Component {
+    export default class chair extends React.Component {
     render() {
            return(
 
@@ -9,28 +9,28 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image} from 'reac
 
 <View style={{marginTop: 10}}></View>
       <Text style = {{ fontSize: 16, fontWeight:'bold', color:'#2c3436', textAlign:'center', marginHorizontal: 40, marginBottom:20}} 
-      >RIPPED JEANS</Text>
+      >FLOWER CHAIR</Text>
 
        <Image 
           style={{ width : "100%", height: 200, borderRadius: 10/2, marginTop: 0, marginBottom: 0}} 
-          source = {require ('./assets/images/jjeans.png')}
+          source = {require ('./assets/images/f3.png')}
           resizeMode = "contain"
       />
      <View style={{marginTop: 10}}></View>
       <Text style = {{ fontSize: 16, fontWeight:'bold', color:'#2c3436', textAlign:'center', marginHorizontal: 40}} 
-      >Price: £25 </Text>
+      >Price: £35 </Text>
       <View style={{marginTop: 10}}></View>
       <Text style = {{ fontSize: 16, fontWeight:'bold', color:'#2c3436', textAlign:'center', marginHorizontal: 40}} 
-      >Condition: New </Text>
+      >Condition: USED </Text>
       <View style={{marginTop: 10}}></View>
       <Text style = {{ fontSize: 16, fontWeight:'bold', color:'#2c3436', textAlign:'center', marginHorizontal: 40}} 
-      >SIZE : 8 </Text>
+      >COLOR : ORANGE </Text>
       <View style={{marginTop: 10}}></View>
       <Text style = {{ fontSize: 16, fontWeight:'bold', color:'#2c3436', textAlign:'center', marginHorizontal: 40}} 
       >Location: OULU </Text>
       <View style={{marginTop: 10}}></View>
       <Text style = {{ fontSize: 16, fontWeight:'bold', color:'#2c3436', textAlign:'center', marginHorizontal: 40}} 
-      >DELIVERY AVAILABLE </Text>
+      >PICK UP ONLY </Text>
 
     <View style = {{  flexDirection: 'row', margin: 5}}> 
                 <TouchableOpacity
