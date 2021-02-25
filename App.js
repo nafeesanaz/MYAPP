@@ -20,6 +20,7 @@ import headphones from './headphones';
 import chair from './chair';
 import cabinet from './cabinet';
 import bracelet from './bracelet';
+import newitems from './newitems';
 
 
 
@@ -50,6 +51,7 @@ export default class App extends React.Component {
           <Stack.Screen name="chair" component ={chair}/>
           <Stack.Screen name="cabinet" component ={cabinet}/>
           <Stack.Screen name="bracelet" component ={bracelet}/>
+          <Stack.Screen name="newitems" component ={newitems}/>
         </Stack.Navigator>
       </NavigationContainer>
       
