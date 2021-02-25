@@ -27,7 +27,7 @@ export default class shopScreen extends React.Component{
            
             <View style = {{  flexDirection: 'row', margin: 1, paddingVertical: 5, alignItems:'center',justifyContent:'center'}}> 
                 <TouchableOpacity
-                    onPress={ () => this.props.navigation.navigate('clothes')}
+                    onPress={ () => this.props.navigation.navigate('newitems')}
                     style={{ backgroundColor: '#607D8B',padding: 20, width: 200, borderRadius: 20, marginHorizontal: 2}}>
                     <Text style={{ textAlign: 'center', fontSize: 15, color: '#fff' }}>Add New Item to Sell</Text>
                 </TouchableOpacity>
