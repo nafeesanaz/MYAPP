@@ -1,14 +1,20 @@
 import * as React from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity, TouchableNativeFeedback} from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity, TouchableNativeFeedback, TextInput} from 'react-native';
 //import{ Picker} from 'react-native-community/picker'
 import {ScrollView} from 'react-native'
 
 
 
-export default class shopScreen extends React.Component{
-    
 
+export default class shopScreen extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {ITEMSEARCH: "cabinet" } }
+   
     render(){
+
+       
+
         return(
         <ScrollView style ={{backgroundColor:"#d5e7e8"}}>
             <View Style ={{ 
@@ -141,7 +147,21 @@ export default class shopScreen extends React.Component{
                 />
             </TouchableNativeFeedback>   
             </View>
-            <View style ={{flexDirection: 'row', margin: 1, alignItems:"center", justifyContent:'center'}}>   
+            <View style = {{   margin: 5, alignItems:'center', justifyContent:'center'}}> 
+                <TouchableOpacity
+                    onPress={ () => this.props.navigation.navigate('headphones')}
+                    style={{ backgroundColor: '#607D8B', width: 300, height: 50, borderRadius: 10, marginTop:50, alignItems:'center', justifyContent:'center'}}>
+                    <Text style={{ textAlign: 'center', fontSize: 15, color: '#fff' , textAlign:'center'}}>SEARCH </Text>
+                </TouchableOpacity>
+            </View>
+              <TextInput
+                    onChangeText={(value) => this.setState({ ITEMSEARCH: value}) }
+                    style={{ marginTop: 20, borderBottomColor: '#ddd', borderBottomWidth: 1, paddingBottom: 50, textAlign:'center' }}
+                    placeholder="ITEM SEARCH"
+                    
+            />
+             
+            <View style ={{flexDirection: 'row', marginTop: 1, alignItems:"center", justifyContent:'center'}}>   
                   
                   <Image
                   style={{ width : "50%", height: 130, borderRadius: 40/2}} 
@@ -151,9 +171,9 @@ export default class shopScreen extends React.Component{
             
                   
               </View>
+            
             </View>
-            
-            
+      
 
             
         </ScrollView>
