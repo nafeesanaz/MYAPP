@@ -29,7 +29,7 @@ export default class signupScreen extends React.Component{
 
     making_api_call=()=>{
         if (this.validate_field()){
-            alert("You are now signed up")
+            alert("New Item added")
         }
     }
 
